@@ -1,11 +1,33 @@
+/* Carousel Images */
+
 .burger {
+    align-items: center;
     width: 100%;
+    background-position: center center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    z-index: 50;
+  
 }
 
 .bar {
+    align-items: center;
     width: 100%;
+    background-position: center center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    z-index: 50;
 }
 
 .wine {
+    align-items: center;
     width: 100%;
+    background-position: center center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    z-index: 50;
 }
+
