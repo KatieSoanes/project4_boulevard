@@ -2,6 +2,15 @@ body {
     background-color: #FFFAF0;
 }
 
+/* Nav bar */
+ /* .nav-item {
+ 
+/* reserve button */
+.btnReserve {
+    position: absolute;
+    top: 400px;
+}
+
 /* Scroll up button */
 .btnScrollToTop {
     position: fixed;
@@ -51,4 +60,6 @@ body {
 }
 
 /* About Section */
+
+
 
