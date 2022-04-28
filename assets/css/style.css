@@ -32,9 +32,13 @@ p {
     top: 400px;
     margin-left: 612px;
     margin-top: 110px;
-    color: #071e26;;
-    background-color: white;
-    
+    color: #FFFAF0;
+    background-color:#071e26;
+}
+
+.btnReserve:hover {
+    background-color: #FFFAF0;
+    color: #071e26;
 }
 
 /* Scroll up button */
@@ -45,8 +49,8 @@ p {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: black;
-    color: white;
+    background-color: #FFFAF0;
+    color: #071e26;
     outline: none;
     cursor: pointer;
     border: none;
@@ -92,7 +96,7 @@ h1 {
     text-align: center;
     font-size: 30px;
     padding: 30px;
-    color: white;
+    color: #FFFAF0;
 }
 
 p {
@@ -134,7 +138,7 @@ p {
     font-size: 18px;
     line-height: 1.5;
     font-family: Krona+One, sans-serif;
-    color: white;
+    color: #FFFAF0;
 }
 
 /*image of man dishing up plates */
@@ -153,7 +157,7 @@ p {
     height: 100px;
     margin-top: -100px;
     clear: both;
-    background-color: #fba92c;
+    background-color: #FFFAF0;
 }
 
 .social-networks 
@@ -176,7 +180,7 @@ p {
 
 .footer-bottom
 {
-    background-color:#fba92c ;
+    background-color:#FFFAF0;
     color: black;
     width: 100vw;
     padding: 0;
