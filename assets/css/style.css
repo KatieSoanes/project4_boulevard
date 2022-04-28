@@ -95,4 +95,16 @@ p {
     padding-right: 320px;
 }
 
+/* Meet and Greet Section: images */
 
+.head_chef {
+    width: 33%;
+}
+
+.sous_chef {
+    width: 33%;
+}
+
+.manager {
+    width: 33%;
+}
