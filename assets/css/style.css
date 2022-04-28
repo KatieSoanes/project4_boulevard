@@ -98,13 +98,30 @@ p {
 /* Meet and Greet Section: images */
 
 .head_chef {
-    width: 33%;
+    width: 250px;
 }
 
 .sous_chef {
-    width: 33%;
+    width: 250px;
 }
 
 .manager {
+    width: 250px;
+    height: 372px;
+}
+
+#meet {
+    padding: 7% 15%;
+}
+
+/*  text-align: center;
+    padding: 5%; */
+
+.team-image {
+    float: left;
     width: 33%;
+}
+
+.team-heading {
+    font-size: 20px;
 }
