@@ -25,6 +25,10 @@ body {
 .btnReserve {
     position: absolute;
     top: 400px;
+    margin-left: 612px;
+    margin-top: 110px;
+    color: #fba92c;
+    background-color: #565656;
     
 }
 
@@ -79,5 +83,16 @@ body {
 
 /* About Section */
 
+h1 {
+    text-align: center;
+    font-size: 30px;
+    padding: 30px;
+}
+
+p {
+    text-align: center;
+    padding-left: 320px;
+    padding-right: 320px;
+}
 
 
