@@ -120,8 +120,53 @@ p {
 .team-image {
     float: left;
     width: 33%;
+    padding-bottom: 2%;
 }
 
 .team-heading {
     font-size: 20px;
+    line-height: 1;
+}
+
+/* footer */
+
+#footer 
+{
+    position: relative;
+    height: 100px;
+    margin-top: -100px;
+    clear: both;
+    background-color: #fba92c;
+}
+
+.social-networks 
+{
+    text-align: center;
+}
+
+ .social-networks > li 
+ {
+    display: inline;
+
+ }
+
+ .social-networks i 
+ {
+    font-size: 160%;
+    margin: 1%;
+    padding: 1%;
+ }
+
+.footer-bottom
+{
+    background-color:#fba92c ;
+    color: black;
+    width: 100vw;
+    padding: 0;
+    text-align: center;
+}
+
+.footer-bottom p
+{
+    word-spacing: 2px;
 }
