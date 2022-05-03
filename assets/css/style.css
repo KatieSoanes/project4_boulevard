@@ -150,7 +150,9 @@ p {
 
 /* Location */
 #location {
-    color: pink;
+    color: red;
+    padding: 100px;
+    text-align: center;
 }
 
 /* footer */
