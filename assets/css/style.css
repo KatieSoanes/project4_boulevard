@@ -8,7 +8,6 @@
     box-sizing: border-box;
 }
 
-/* background-color: #FFFAF0; */
 body {
     background-color: #071e26;
     font-family: Montserrat, sans-serif; 
@@ -54,7 +53,6 @@ p {
     outline: none;
     cursor: pointer;
     border: none;
-
 }
 
 /* Carousel Images */
