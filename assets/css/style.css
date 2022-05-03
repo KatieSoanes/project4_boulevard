@@ -150,20 +150,68 @@ p {
     margin-left: 25%;
 }
 
+/* Location */
+#location {
+    color: pink;
+}
+
 /* footer */
 
-footer {
+/* footer {
     background-color: black;
     color: pink;
     min-height: 120px;
     margin: 0;
+    position: absolute;
 }
-
 
 
 #footer-details {
     padding: 20px;
+} */
+
+#footer 
+{
+    position: relative;
+    height: 100px;
+    margin-top: -100px;
+    clear: both;
+    background-color: #FFFAF0;
 }
+
+.social-networks 
+{
+    text-align: center;
+}
+
+ .social-networks > li 
+ {
+    display: inline;
+
+ }
+
+ .social-networks i 
+ {
+    font-size: 160%;
+    margin: 1%;
+    padding: 1%;
+ }
+
+.footer-bottom
+{
+    background-color: #FFFAF0;
+    color: #071e26;
+    width: 100vw;
+    padding: 0;
+    text-align: center;
+}
+
+.footer-bottom p
+{
+    word-spacing: 2px;
+    color: #071e26;
+}
+
 
 /*menu*/
 .menu {
