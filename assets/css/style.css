@@ -150,10 +150,19 @@ p {
 
 /* Location */
 #location {
-    color: red;
+    color: #FFFAF0;
     padding: 100px;
     text-align: center;
 }
+
+/* Map */
+#div1 
+{
+float: left;
+padding: 40px;
+padding-bottom: 200px;
+}
+
 
 /* footer */
 
