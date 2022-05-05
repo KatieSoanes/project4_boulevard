@@ -62,7 +62,7 @@ p {
     width: 100%;
     background-position: center center;
     background-size: cover;
-    height: 100vh;
+    height: 92vh;
     display: flex;
     z-index: 50;
   
@@ -73,7 +73,7 @@ p {
     width: 100%;
     background-position: center center;
     background-size: cover;
-    height: 100vh;
+    height: 92vh;
     display: flex;
     z-index: 50;
 }
@@ -83,7 +83,7 @@ p {
     width: 100%;
     background-position: center center;
     background-size: cover;
-    height: 100vh;
+    height: 92vh;
     display: flex;
     z-index: 50;
 }
@@ -101,7 +101,7 @@ p {
     text-align: center;
     padding-left: 400px;
     padding-right: 400px;
-    line-height: 2;
+    line-height: 2.5;
 }
 
 /* Meet and Greet Section: images */
@@ -146,6 +146,7 @@ p {
     width: 50%;
     padding: 15px;
     margin-left: 25%;
+    height: 55vh;
 }
 
 /* Location */
@@ -185,7 +186,7 @@ padding-bottom: 200px;
     height: 100px;
     margin-top: -100px;
     clear: both;
-    background-color: #FFFAF0;
+    background-color: black;
 }
 
 .social-networks 
