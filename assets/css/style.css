@@ -232,4 +232,19 @@ margin-left: 540px;
 /*menu*/
 .menu {
     color: #FFFAF0;
+    text-align: center;
+    line-height: 2.5;
+}
+
+.course {
+    font-size: 30px;
+}
+
+.menu-title {
+    font-size: 35px;
+    padding: 45px;
+}
+
+.allergens {
+    padding: 200px;
 }
