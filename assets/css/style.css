@@ -245,6 +245,11 @@ margin-left: 540px;
     padding: 45px;
 }
 
+.chefs {
+    width: 50%;
+    margin-left: 350px;
+    padding: 20px;
+}
 .allergens {
-    padding: 200px;
+    padding: 150px;
 }
