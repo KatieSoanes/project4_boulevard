@@ -90,10 +90,16 @@ p {
 
 /* About Section */
 
-h1 {
+.about {
     text-align: center;
     font-size: 30px;
     padding: 30px;
+    color: #FFFAF0;
+}
+h1 {
+    text-align: center;
+    font-size: 30px;
+    padding: 20px;
     color: #FFFAF0;
 }
 
@@ -129,8 +135,7 @@ p {
 .team-image {
     float: left;
     width: 33%;
-    /* padding-bottom: 50%; */
-    padding: 10px;
+    padding: 30px;
 }
 
 .team-heading {
@@ -151,17 +156,19 @@ p {
 
 /* Location */
 #location {
-    color: green;
-    padding: 100px;
+    color: #FFFAF0;
     text-align: center;
+    font-size: 30px;
+    margin-top: 420px;
 }
 
 /* Map */
-#div1 
+.div1 
 {
-float: left;
-padding: 40px;
+/* float: left;
+padding: 40px; */
 padding-bottom: 200px;
+margin-left: 540px;
 }
 
 
@@ -186,7 +193,7 @@ padding-bottom: 200px;
     height: 100px;
     margin-top: -100px;
     clear: both;
-    background-color: black;
+    background-color: red;
 }
 
 .social-networks 
