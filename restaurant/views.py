@@ -8,6 +8,7 @@ from django.template import loader
 from django.shortcuts import get_object_or_404, render
 from datetime import datetime
 from django.urls import reverse
+from django.utils import timezone
 
 def index(request):
     latest_question_list = Reservation.objects.order_by('-time')
@@ -30,12 +31,13 @@ def add_reservation(request):
     email = request.POST['email']
     restaurant = Restaurant.objects.first()
     no_of_tables = Restaurant.no_of_tables
-    reservations = Reservations.objects.all()
+    reservations = Reservation.objects.all()
 
-    current_year = timezone.now().day
     current_day = timezone.now().day
+    current_hour = timezone.now().hour
     # double booking
-    if Reservation.objects.filter(time__day=current_day, time__hour=current_hour).count() > no_of_tables:
+    
+    if Reservation.objects.filter(time__day=current_day, time__hour=current_hour).count() > restaurant.no_of_tables:
         return render(request, 'restaurant/index.html', {
             'error_message': "You didn't select a choice.",
         })
