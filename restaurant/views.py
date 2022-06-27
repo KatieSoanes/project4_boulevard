@@ -29,6 +29,7 @@ def results(request, reservation_id):
 def add_reservation(request):
     name = request.POST['name']
     email = request.POST['email']
+    date = request.POST['date']
     restaurant = Restaurant.objects.first()
     no_of_tables = Restaurant.no_of_tables
     reservations = Reservation.objects.all()
