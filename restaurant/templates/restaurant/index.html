@@ -7,3 +7,18 @@
 {% else %}
     <p>No polls are available.</p>
 {% endif %}
+
+<form action="{% url 'restaurant:add_reservation' %}" method="post">
+    {% csrf_token %}
+    <fieldset>
+        <legend><h1>Add reservation</h1></legend>
+        {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+        <label>name</label>
+            <input type="text" name="name" value="">
+            <label>email</label>
+            <input type="text" name="email" value="">
+            <br>
+        
+    </fieldset>
+    <input type="submit" value="add_reservation">
+    </form>

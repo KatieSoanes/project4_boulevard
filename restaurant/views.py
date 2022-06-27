@@ -1,15 +1,16 @@
 from django.http import HttpResponse
 
 
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 
-from .models import Reservation
+from .models import Reservation, Restaurant
 from django.template import loader
 from django.shortcuts import get_object_or_404, render
-
+from datetime import datetime
+from django.urls import reverse
 
 def index(request):
-    latest_question_list = Reservation.objects.order_by('-time')[:5]
+    latest_question_list = Reservation.objects.order_by('-time')
     template = loader.get_template('restaurant/index.html')
     context = {
         'latest_question_list': latest_question_list,
@@ -24,5 +25,11 @@ def results(request, reservation_id):
     response = "You're looking at the results of reservation %s."
     return HttpResponse(response % reservation_id)
 
-def vote(request, reservation_id):
-    return HttpResponse("You're voting on reservation %s." % reservation_id)
+def add_reservation(request):
+    name = request.POST['name']
+    email = request.POST['email']
+    restaurant = Restaurant.objects.first()
+    reservation = Reservation.objects.create(name=name, email=email,time=datetime.now(), restaurant=restaurant)
+    
+    return HttpResponseRedirect(reverse('restaurant:index'))
+    

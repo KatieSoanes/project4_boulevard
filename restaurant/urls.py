@@ -2,6 +2,8 @@ from django.urls import path
 
 from . import views
 
+app_name="restaurant"
+
 urlpatterns = [
     # ex: /polls/
     path('', views.index, name='index'),
@@ -10,5 +12,5 @@ urlpatterns = [
     # ex: /polls/5/results/
     path('<int:reservation_id>/results/', views.results, name='results'),
     # ex: /polls/5/vote/
-    path('<int:reservation_id>/vote/', views.vote, name='vote'),
+    path('add_reservation/', views.add_reservation, name='add_reservation'),
 ]
