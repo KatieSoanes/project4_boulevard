@@ -36,13 +36,13 @@ ALLOWED_HOSTS = ['8080-katiesoanes-project4bou-pl4arfadrg7.ws-eu43.gitpod.io','b
 # Application definition
 
 INSTALLED_APPS = [
+    'restaurant.apps.RestaurantConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'restaurant',
+    'django.contrib.staticfiles'
 ]
 
 MIDDLEWARE = [
