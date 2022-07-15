@@ -23,7 +23,6 @@ p {
     font-size: 40px;
     font-family: Krona+One, sans-serif;
 }
-
  
 /* reserve button */
 .btnReserve {
@@ -208,7 +207,7 @@ margin-left: 540px;
  .social-networks i 
  {
     font-size: 160%;
-    margin: 1%;
+    margin: 2%;
     color: #071e26;
     margin-left: 100px;
  }
