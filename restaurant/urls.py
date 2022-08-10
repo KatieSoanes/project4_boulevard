@@ -13,5 +13,6 @@ urlpatterns = [
     path('<int:reservation_id>/results/', views.results, name='results'),
     # ex: /polls/5/vote/
     path('add_reservation/', views.add_reservation, name='add_reservation'),
-    path('make_booking/' , views.MakeBooking.as_view())
+    path('make_booking/' , views.MakeBooking.as_view()),
+    path('cancel_booking' , views.CancelBooking.as_view())
 ]

@@ -110,4 +110,34 @@ class MakeBooking(APIView):
         else:
             return Response(booking_response,status=status.HTTP_400_BAD_REQUEST)
 
-    
+class CancelBooking(APIView):
+
+    def post(self, request):
+        booking_reference = request.data["booking_reference"]
+        query_set = get_booking_by_reference(booking_reference)
+        serializer = BookingSerializer(query_set, many=True)
+        row_to_delete = dict(serializer.data[0])
+        year, month, day = row_to_delete["date"].split("-")
+        day = str(int(day))
+        month = int(month)
+        get_booking_calendar(month)
+        booking_calendar = get_booking_calendar(month)
+
+        booking_response = booking_calendar.cancel_booking_for_day(day, booking_reference)
+        if (booking_response["response"] == 200):
+            booking_to_delete = get_booking_by_reference(booking_reference)
+            booking_to_delete.delete()
+            return Response(booking_response, status=status.HTTP_201_CREATED)
+        else:
+            return Response(booking_response,status=status.HTTP_400_BAD_REQUEST)
+
+class DateForm(forms.Form):
+    date = forms.DateField(widget=AdminDateWidget())
+    groupSize = forms.IntegerField()
+
+class CancelBookingForm(forms.Form):
+    booking_reference = forms.CharField(max_length=255)
+
+
+def reservation_page(request):
+    return render(request, "reservations.html", context={ "form": DateForm(), "cancel_form" : CancelBookingForm(), "value":[2,4,6,8]})
