@@ -1,0 +1,29 @@
+
+
+
+.make-booking-button{
+    background: var(--button-bg);
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        color: var(--button-fg);
+        cursor: pointer;
+        transition: background 0.15s;
+    }
+    
+    #main-grid{
+    display:grid;
+    height: 100vh;
+    grid-template-areas:
+        "availability availability"
+        "booking cancel";
+    }
+    
+    
+    .swal-modal .swal-text {
+        text-align: center !important;
+    }
+    
+body{
+    background-color: white!important;
+}    

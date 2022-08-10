@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <script src="{% url 'js-catlog' %}"></script>
+    <script src="{% static '/admin/js/core.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'admin/css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'admin/css/widgets.css' %}">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'bookings/style.css' %}" />
+    {% load static %}
+
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+        {{ value|json_script:"value" }}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="{% static 'bookings/index.js' %}" ></script>
+</head>
+<body>
+
+
+
+<div id="main-grid">
+    <div style="grid-area: availability;">
+
+    </div>
+    <div style="align-self:center; justify-self:center; grid-area: booking;">
+          <h1>Make Booking</h1>
+   <form action="/restaurant/make_booking" method="post">
+        <form id="booking-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        {{ form.media }}
+       <input type="submit" value="Submit" />
+
+
+        </form>
+        <!-- <button class="make-booking-button" onclick="makeBooking()">Submit</button> -->
+        </div>
+
+    <div style="grid-area: cancel;align-self:center; justify-self:center; background-color:#DCFFFD; height:100%; width:100%; display:flex; align-items:center; justify-content:center; flex-direction:column">
+        <h1>Cancel Booking</h1>
+    <form action="/restaurant/cancel_booking" method="post">
+        {% csrf_token %}
+        {{ cancel_form.media }}
+        {{ cancel_form.as_p }}
+        <input type="submit" value="Submit">
+    </form>
+        </div>
+</div>
+
+
+</body>
+</html>
