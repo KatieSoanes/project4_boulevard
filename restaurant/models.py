@@ -10,4 +10,8 @@ class Reservation(models.Model):
     time = models.DateTimeField()
     email = models.CharField(max_length=200)
     name = models.CharField(max_length=200)
-    
+
+class Booking(models.Model):
+    date = models.DateField()
+    booking_reference = models.CharField(max_length=255)
+    num_guests = models.IntegerField()
