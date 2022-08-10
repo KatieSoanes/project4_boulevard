@@ -3,12 +3,46 @@ from django.http import HttpResponse
 
 from django.http import HttpResponse, HttpResponseRedirect
 
-from .models import Reservation, Restaurant
+from .models import Reservation, Restaurant, Booking
+from .serializers import BookingSerializer
+from .BookingCalendar import BookingCalendar
+from rest_framework import status
+from rest_framework import permissions
+from rest_framework.response import Response
+from django.contrib.admin.widgets import AdminDateWidget
+from django import forms
 from django.template import loader
 from django.shortcuts import get_object_or_404, render
 from datetime import datetime
 from django.urls import reverse
 from django.utils import timezone
+
+from rest_framework.views import APIView
+
+import datetime
+import calendar
+
+def get_bookings_for_month(month):
+    dateMaxMin = calendar.monthrange(2022, month)
+    dateMax = dateMaxMin[1]
+
+    start_date = datetime.date(2022, month, 1)
+    end_date = datetime.date(2022, month, dateMax)
+
+
+    return Booking.objects.filter(date__range=(start_date, end_date))
+
+def get_booking_by_reference(reference):
+    return Booking.objects.filter(booking_reference = reference)
+
+
+
+def get_booking_calendar(month):
+    bookings_for_month = get_bookings_for_month(month)
+    serializer = BookingSerializer(bookings_for_month, many=True)
+    booking_calendar = BookingCalendar(month)
+    booking_calendar.hydrate_bookings(serializer.data)
+    return booking_calendar
 
 def index(request):
     latest_question_list = Reservation.objects.order_by('-time')
@@ -46,4 +80,34 @@ def add_reservation(request):
     reservation = Reservation.objects.create(name=name, email=email,time=datetime.now(), restaurant=restaurant)
     
     return HttpResponseRedirect(reverse('restaurant:index'))
+
+class MakeBooking(APIView):
+
+    def post(self, request):
+        year, month, day = request.data["date"].split("-")
+        month= int(month)
+        day = str(int(day))
+        date = datetime.date(2022, month, int(day))
+        get_booking_calendar(month)
+
+        group_size = int(request.data["groupSize"])
+
+        booking_calendar = get_booking_calendar(month)
+        booking_response = booking_calendar.make_booking_for_day(day, group_size)
+
+        if (booking_response["response"] == 200):
+            data_to_save = {
+                "date": date,
+                'booking_reference': str(booking_response["booking_reference"]),
+                "num_guests": group_size
+            }
+            print(f"cheff made it here")
+            serializer = BookingSerializer(data=data_to_save)
+            if serializer.is_valid():
+                serializer.save()
+                # return  render(request, "booking-success.html", context=serializer.data)
+                return Response(serializer.data, status=status.HTTP_201_CREATED)
+        else:
+            return Response(booking_response,status=status.HTTP_400_BAD_REQUEST)
+
     
