@@ -132,7 +132,7 @@ class CancelBooking(APIView):
             return Response(booking_response,status=status.HTTP_400_BAD_REQUEST)
 
 class DateForm(forms.Form):
-    date = forms.DateField(widget=AdminDateWidget())
+    date = forms.DateField(widget=AdminDateWidget(attrs={'type': 'date'}))
     groupSize = forms.IntegerField()
 
 class CancelBookingForm(forms.Form):

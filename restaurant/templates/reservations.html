@@ -29,16 +29,16 @@
     </div>
     <div style="align-self:center; justify-self:center; grid-area: booking;">
           <h1>Make Booking</h1>
-   <form action="/restaurant/make_booking" method="post">
+   
         <form id="booking-form">
         {% csrf_token %}
         {{ form.as_p }}
         {{ form.media }}
-       <input type="submit" value="Submit" />
+      
 
 
         </form>
-        <!-- <button class="make-booking-button" onclick="makeBooking()">Submit</button> -->
+        <button class="make-booking-button" onclick="makeBooking()">Submit</button>
         </div>
 
     <div style="grid-area: cancel;align-self:center; justify-self:center; background-color:#DCFFFD; height:100%; width:100%; display:flex; align-items:center; justify-content:center; flex-direction:column">

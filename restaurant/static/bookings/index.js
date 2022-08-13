@@ -12,7 +12,7 @@ window.makeBooking= function() {
     console.log("here is the json I am posting", json)
     console.log(object)
 
-    $.ajax('restaurant/make_booking', {
+    $.ajax('restaurant/make_booking/', {
         type: 'post',  // http method
         data: json,
         dataType: 'json',
